@@ -1,41 +1,65 @@
 button{
-  font-size: 80px;
-  width: 150px;
-  padding: 10px;
+  font-size: 100px;
+  width: 20%;
 }
 
 #button-container{
   display: flex;
+  flex-flow: row wrap;
   margin: auto;
   justify-content: center;
   background-color: black;
   color: white;
-  padding: 20px;
-  width: 40%;
+  padding: 10px;
+  width: 50%;
   border-radius: 25px;
 }
 
 #rock{
-  border-radius:25px 0px 0px 25px;
+  border-radius: 25px 0px 0px 25px;
 }
 
 #paper{
-  border-radius:1px 1px 1px 1px;
+  border-radius: 1px 1px 1px 1px;
 }
 
 #scissors{
-  border-radius:0px 25px 25px 0px;
+  border-radius: 0px 25px 25px 0px;
 }
 
 #bestOfFive{
-  text-align:center;
-  padding:10px;
-  padding-right:50px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  width: 20%;
 }
 
 #chooseWep{
-  text-align:center;
-  padding:10px;
-  padding-left:50px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  font-size:24px;
+  font-weight: bold;
+  width: 20%;
+}
+
+#gameLog{
+  text-align: center;
+  width: 100%;
+  background-color: gray;
+  font-size: 24px;
+}
+
+#playerScore{
+  width: 50%;
+  text-align: left;
+  font-size: 18px;
+}
+
+#computerScore{
+  width: 50%;
+  font-size: 18px;
+  text-align: right;
+  vertical-align:
 }
 
