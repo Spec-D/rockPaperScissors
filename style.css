@@ -1,22 +1,41 @@
-#buttonBox {
-	display: flex;
-	flex-flow: row wrap;
-	justify: center;
-	width: 500px;
-	justify-content: center;	
-	background-color: black;
-	border-radius: 10%;
-	 
-} 
+button{
+  font-size: 80px;
+  width: 150px;
+  padding: 10px;
+}
 
-button {
-	font-size: 50px;
-	font-weight: bold;
-	text-align: center;
-	background-color: green;
-	color: purple;
-	margin: 25px;
-	padding: 10px;
-	border-radius: 10%;
+#button-container{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  width: 40%;
+  border-radius: 25px;
+}
+
+#rock{
+  border-radius:25px 0px 0px 25px;
+}
+
+#paper{
+  border-radius:1px 1px 1px 1px;
+}
+
+#scissors{
+  border-radius:0px 25px 25px 0px;
+}
+
+#bestOfFive{
+  text-align:center;
+  padding:10px;
+  padding-right:50px;
+}
+
+#chooseWep{
+  text-align:center;
+  padding:10px;
+  padding-left:50px;
 }
 

@@ -1,3 +1,43 @@
+function game() {
+
+        let score = 0;
+        let compScore = 0;
+
+        for(let i=0; i<4; i++) {
+                playRound();
+                if (playerSelection == "rock" && computerSelection == "rock") {
+                        i--;
+                } else if (playerSelection == "rock" && computerSelection == "paper") {
+                        compScore++;
+                } else if (playerSelection == "rock" && computerSelection == "scissors") {
+                        score++;
+                } else if (playerSelection == "paper" && computerSelection == "rock") {
+                        i--;
+                } else if (playerSelection == "paper" && computerSelection == "paper") {
+                        compScore++;
+                } else if (playerSelection == "paper" && computerSelection == "scissors") {
+                        score++;
+                } else if (playerSelection == "scissors" && computerSelection == "rock") {
+                        i--;
+                } else if (playerSelection == "scissors" && computerSelection == "paper") {
+                        compScore++;
+                } else if (playerSelection == "scissors" && computerSelection == "scissors") {
+                        score++;
+                } else
+                        return "DOES NOT COMPUTE";
+        }
+        if (score > compScore) {
+                return "Score: " + score +
+                       "\ncompScore: " + compSCore +
+                       "\n\nYOU WIN!";
+        } else {
+                return "Score: " + score +
+                       "\ncompScore: " + compSCore +
+                       "\n\nYou lose."
+        }
+}
+
+
 function getComputerChoice() {
         let computerChoice = (Math.round(Math.random() * 3));
 
@@ -10,10 +50,10 @@ function getComputerChoice() {
         else if (computerChoice == 2)
                 return "scissors";
         else
-          return "The computer blew up!";
+          return "DOES NOT COMPUTE";
 }
 
-function singleRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
 
         computerSelection = getComputerChoice();
         playerSelection = playerSelection.toLowerCase();
@@ -49,8 +89,8 @@ function singleRound(playerSelection, computerSelection) {
 
 choice = prompt(choice);
 
-let result = singleRound(choice);
+let result = playRound(choice);
 
 //console.log("result = " + result);
-alert("choice = " + choice + "\nresult = " + result);
+alert(game());
 
