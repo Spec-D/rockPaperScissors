@@ -1,20 +1,30 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
   <title>Rock, Paper, Scissors.</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div id="button-container">
+  <div id="chooseOpponent">
+    <a style= padding:5px;>Opponent:</a>
+    <input type="button" id="opponentButton" value="Computer"
+       onclick="opponentButtonToggle();">
+  </div>
+  <div id="buttonContainer">
     <p id=bestOfFive>
       Best
       <br>of
       <br>Five</p>
-    <button id="rock">
+    
+    <button id="rock" onclick="playRound('rock')">
       &#129704;
-    <button id="paper">
+      </button>
+    <button id="paper" onclick="playRound('paper')">
       &#128195;
-    <button id="scissors">
+      </button>
+    <button id="scissors" onclick="playRound('scissors')">
       &#x2702;
       </button>
     <p id="chooseWep">
@@ -31,13 +41,10 @@
       <br>
     </p>
     
-      <p id="playerScore">
-      PLAYER SCORE: N/A
-      </p>
-      <p id="computerScore">
-      COMPUTER SCORE: N/A
-      </p>
-      
+      <p id="playerScore">Player Score: 0 </p>
+      <p id="opponentScore">Computer Score: 0 </p>
+
+  </div>
   <script src="javascript.js"></script>
 </body>
 
