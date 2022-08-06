@@ -1,42 +1,41 @@
 var PSCORE = 0;
 var OSCORE = 0;
-var ROUND = 1;
+var ROUND = 0;
+var OPPONENT = "Computer";
 
 // works
 function getComputerChoice() {
-        let computerChoice = (Math.round(Math.random() * 3));
+        let computerChoice = (Math.ceil(Math.random() * 3));
 
         console.log("computerChoice = " + computerChoice);
 
-        if (computerChoice == 0)
+        if (computerChoice == 1)
                 return "rock";
-        else if (computerChoice == 1)
-                return "paper";
         else if (computerChoice == 2)
+                return "paper";
+        else if (computerChoice == 3)
                 return "scissors";
         else
           return "DOES NOT COMPUTE";
 }
 
-/* buggy
 function playRound(playerSelection, computerSelection) {
 
-   alert("playRound() call");
-        computerSelection = getComputerChoice();
-        playerSelection = playerSelection.toLowerCase();
+	ROUND++;
+
+	console.log("ROUND = " + ROUND);
 
         if (playerSelection == 'rock') {
-   
-                if (computerSelection == "rock") {
-                        ROUND++;
-                        console.log("Both players chose rock, it's a draw!");
-                
+		console.log("selected rock");   
+
+		if (computerSelection == "rock") {
+                        document.getElementById("gameLog").append("Both players chose rock, it's a draw. \n");
+			console.log("Both players chose rock, it's a draw.");
                 } else if (computerSelection == "paper") {
-                        ROUND++;
                         OSCORE++;
-                        console.log("You lose this round, the computer chose paper!");
+                        console.log("You lose this round, the computer chose paper.");
                 } else if (computerSelection == "scissors") {
-                        ROUND++;
+			PSCORE++;
                         console.log("You win, the computer chose scissors!");
                 }
         } else if (playerSelection == "paper") {
@@ -70,42 +69,41 @@ function playRound(playerSelection, computerSelection) {
         }
       
         document.getElementById("playerScore").innerHTML = `Player Score: ${PSCORE}`;
-        document.getElementById("opponentScore").innerHTML = `Opponent Score: ${OSCORE}`;
+        document.getElementById("opponentScore").innerHTML = `${OPPONENT} Score: ${OSCORE}`;
   
         if(ROUND == 5){
           if(PSCORE > OSCORE){
               alert("P1 wins");}//Player One Wins ${PSCORE} to ${OSCORE} sent to game log
           else if(OSCORE > PSCORE){
               alert("P2/PC wins");}
-        }                       //Player Two / Computer Wins rewrite 
+                               //Player Two / Computer Wins rewrite 
                                 //this to differentiate between computer 
                                 //and player 2 winning
           
           PSCORE = 0;
           OSCORE = 0;
-          ROUND = 1;
-        }  
-*/
+          ROUND = 0;
+	}
+}  
 
-// was working, now buggy. see above?
-function opponentButtonToggle() {
+
+// working
   
-  alert("TEST")
+  function opponentButtonToggle() {
+  
   PSCORE = 0;
   OSCORE = 0;
 
-  var oppType = document.getElementById("opponentButton");
-  if(oppType.value == "Human"){
-      oppType.value = "Computer";}
-  else if(oppType.value == "Computer"){
-      oppType.value = "Human";}
-  else{
-      oppType.value = "Computer";}
- 
+  if(OPPONENT == "Computer") {
 
-  if(oppType.value == "Human") {
-    document.getElementById("opponentScore").innerHTML = `Player 2 Score: ${OSCORE}`;}
-  else if(oppType.value == "Computer"){
-    document.getElementById("opponentScore").innerHTML = `Computer Score: ${OSCORE}`;}
-
+    OPPONENT = "Human";
+    document.getElementById("opponentButton").value = `${OPPONENT}`;
+    document.getElementById("opponentScore").innerHTML = `Player 2 Score: ${OSCORE}`;
+  
+  } else if (OPPONENT == "Human"){
+    
+    OPPONENT = "Computer";
+    document.getElementById("opponentButton").value = "Computer";
+	  document.getElementById("opponentScore").innerHTML = `${OPPONENT} Score: ${OSCORE}`;
+  }
 }
