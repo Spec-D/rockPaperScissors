@@ -1,14 +1,23 @@
+#reset{
+  padding: 1px;
+  width: fit-content;
+  background-color:red;
+  text: black;
+  position: left;
+  float: left;
+}
+
 #chooseOpponent{
-  margin: auto;
+  margin: auto; 
   color: white;
   font-size: 24px;
   background-color: black;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
   padding: 20px;
   width: 50%;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 #buttonContainer{
@@ -21,7 +30,7 @@
   color: white;
   padding: 20px;
   width: 50%;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 #rock{
@@ -54,8 +63,8 @@
 #chooseWep{
   text-align: center;
   font-family: Helvetica, sans-serif;
-  font-size:24px;
   font-weight: bold;
+  font-size: 24px;
   width: 18%;
   margin: 1%;
 }
@@ -64,7 +73,6 @@
   text-align: center;
   width: 100%;
   background-color: gray;
-  font-size: 24px;
 }
 
 #playerScore{

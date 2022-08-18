@@ -1,50 +1,43 @@
 <!DOCTYPE html>
-
 <head>
-  <meta charset="UTF-8">
-  <title>Rock, Paper, Scissors.</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Rock, Paper, Scissors.</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-  <div id="chooseOpponent">
-    <a style= padding:5px;>Opponent:</a>
-    <input type="button" id="opponentButton" value="Computer"
-       onclick="opponentButtonToggle();">
-  </div>
-  <div id="buttonContainer">
-    <p id=bestOfFive>
-      Best
-      <br>of
-      <br>Five</p>
+<body style="background-color: grey">
+	<div id="chooseOpponent">
+		<button id="reset" onclick="resetGame()">Reset</button>
+    		<a style= padding:5px;>Opponent:</a>
+    		<input type="button" id="opponentButton" value="Computer"
+       		onclick="opponentButtonToggle();">
+	</div>
+  	<div id="buttonContainer">
+	  	<!-- update 'bestOfFive' to show active Round # (roman numerals maybe?) -->
+    		<p id=bestOfFive>
+      			Best<br>of<br>Five
+		</p>
     
-    <button id="rock" onclick="playRound('rock', getComputerChoice())">
-      &#129704;
-      </button>
-    <button id="paper" onclick="playRound('paper', getComputerChoice())">
-      &#128195;
-      </button>
-    <button id="scissors" onclick="playRound('scissors', getComputerChoice())">
-      &#x2702;
-      </button>
-    <p id="chooseWep">
-      Choose
-      <br>Your
-      <br>Weapon
-      </p>
-    <p id="gameLog">
-      GAME LOG GOES HERE
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </p>
-    
-      <p id="playerScore">Player Score: 0 </p>
-      <p id="opponentScore">Computer Score: 0 </p>
+    		<button id="rock" onclick="playRound('rock', getComputerChoice())">
+      		&#129704;
+      		</button>
+    		<button id="paper" onclick="playRound('paper', getComputerChoice())">
+      		&#128195;
+      		</button>
+    		<button id="scissors" onclick="playRound('scissors', getComputerChoice())">
+      		&#x2702;
+     		</button>
+    		<p id="chooseWep">
+      		Choose<br>Your<br>Weapon
+		</p>
 
-  </div>
-  <script src="javascript.js"></script>
+		<!-- Add gameLog div later to clean things up -->
+    		<p><ol id="gameLog"></ol></p>
+    
+		<!-- Add scorekeeping div later to clean things up -->
+      		<p id="playerScore">Player Score: 0 </p>
+      		<p id="opponentScore">Computer Score: 0 </p>
+	</div>
+	<script src="javascript.js"></script>
 </body>
 
