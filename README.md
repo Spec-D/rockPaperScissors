@@ -1,5 +1,5 @@
 # rockPaperScissors
-A Rock, Paper, Scissors game utilizing JavaScript, CSS & HTML.
+A Rock, Paper, Scissors game using JavaScript, CSS & HTML.
 
 To-Do List:
 - toggling opponent type does not reset chat log
